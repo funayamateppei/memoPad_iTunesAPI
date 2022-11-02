@@ -4,7 +4,8 @@
 body {
   background-image: url('../img/background.jpg');
   background-size: cover;
-  font-family: 'Sacramento', cursive;
+  /* font-family: 'Sacramento', cursive; */
+  font-family: 'Caveat', cursive, 'RocknRoll One', sans-serif;
   overflow: hidden;
 }
 
@@ -31,6 +32,7 @@ body {
 
 .form {
   display: flex;
+  align-items: center;
 }
 
 .form1 label {
@@ -47,6 +49,25 @@ body {
   text-align: center;
 }
 
+.btn {
+  margin-left: 20px;
+}
+
+.btn button {
+  border: 1px solid gray;
+  box-shadow: 0 2px black;
+  transition: .2s;
+}
+
+.btn button:hover {
+  opacity: .7;
+}
+
+.btn button:active {
+  box-shadow: none;
+  transform: translateY(2px);
+  transition: .2s;
+}
 
 
 
@@ -80,6 +101,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .line {
   background-color: black;
   border-radius: 2px;
@@ -89,55 +111,80 @@ body {
   opacity: 0.7;
   transition: 0.5s;
 }
+
 /* hamburger → × animation JSで付与
 		div class=navbar にclass=toggleが付与されることで適用される */
 .toggle .line1 {
   transform: rotate(-405deg) translate(-5px, 6px);
   transition: 0.5s;
 }
+
 .toggle .line2 {
   opacity: 0;
 }
+
 .toggle .line3 {
   transform: rotate(405deg) translate(-5px, -6px);
   transition: 0.5s;
 }
+
+/* ----------------------- search list -------------------------- */
 /* hamburger を押したらこのclassをJSで付与して画面外から画面内へ */
 .list-active {
-  opacity: 1 !important;
+  transform: translateX(0%) !important;
   transition: .5s;
 }
+
 .search-list {
   font-family: 'Caveat', cursive, 'RocknRoll One', sans-serif;
   background-color: white;
   position: absolute;
   top: 0;
   right: 0;
-  width: 300px;
+  width: 400px;
   height: 100%;
   padding-top: 180px;
   z-index: 1;
-  opacity: 0;
+  transform: translateX(100%);
   transition: .5s;
 }
+
 .search-list h2 {
   font-size: 32px;
   width: 100%;
   text-align: center;
   margin-bottom: 15px;
 }
-.header {
+
+.lists h3 {
   font-size: 24px;
+  margin-left: 20px;
 }
 
-li {
-  list-style: none;
-  padding: 0 !important;
-  text-align: center;
-}
-ul {
-  padding: 0;
+.header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.header div {
+  display: flex;
+  justify-content: end;
   align-items: center;
 }
+
+.header p {
+  font-size: 16px;
+  padding: 0 0 0 10px !important;
+  margin: 0;
+  width: 240px;
+  display: inline-block;
+}
+
+.lists button {
+  text-align: center;
+  width: 50px;
+  height: 30px;
+  margin: 5px;
+}
+
