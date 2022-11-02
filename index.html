@@ -4,12 +4,85 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
   <title>カラオケ　メモ</title>
 </head>
 
 <body>
-  
+  <div class="top">
+    <h1>KARAOKE MEMO</h1>
+  </div>
+
+  <div class="flex">
+    <div class="search">
+        <div>
+          <h2>Search</h2>
+          <div class="flex">
+            <div class="form1">
+              <label for="artist">ARTIST</label>
+              <input id="artist" type="text" placeholder="">
+            </div>
+            <div class="form1">
+              <label for="song">SONG</label>
+              <input id="song" type="text" placeholder="">
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="api">
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="nav">
+    <p>Search List</p>
+    <div class="navbar">
+      <div class="line line1"></div>
+      <div class="line line2"></div>
+      <div class="line line3"></div>
+    </div>
+  </div>
+
+
+  <div class="search-list">
+    <div class="list">
+      <h2>Search List</h2>
+        <div class="lists">
+          <ul class="header">
+            <li>Artist _ Song</li>
+            <li></li>
+          </ul>
+          <ul>
+            <li>Justin Beaber</li>
+            <li>相原翔</li>
+            <li><button>Fill in the Form</button></li>
+          </ul>
+        </div>
+    </div>
+
+  </div>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+  <script src="index.js"></script>
+
 </body>
 </html>
