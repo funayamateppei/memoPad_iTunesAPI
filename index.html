@@ -4,12 +4,78 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
   <title>カラオケ　メモ</title>
 </head>
 
 <body>
+  <!-- top -->
+  <div class="top">
+    <h1>KARAOKE MEMO</h1>
+  </div>
+
+  <!-- form -->
+  <div class="flex">
+    <div class="search">
+        <div>
+          <h2>Search</h2>
+          <div class="flex">
+            <div class="form1">
+              <label for="artist">ARTIST</label>
+              <input id="artist" type="text" placeholder="">
+            </div>
+            <div class="form1">
+              <label for="song">SONG</label>
+              <input id="song" type="text" placeholder="">
+            </div>
+            <div class="form1 btn">
+              <button>SEARCH</button>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- API -->
+  <div class="api">
+    
+  </div>
+
+
+<!-- hamburger -->
+  <div class="nav">
+    <p>Search List</p>
+    <div class="navbar">
+      <div class="line line1"></div>
+      <div class="line line2"></div>
+      <div class="line line3"></div>
+    </div>
+  </div>
+
+  <!-- 検索履歴 -->
+  <div class="search-list">
+    <div class="list">
+      <h2>Search List</h2>
+        <div class="lists">
+          <h3>Artist _ Song</h3>
+          <div class="header">
+            <!-- 検索履歴を表示 -->
+            <!--div p btn btn div -->
+          </div>
+        </div>
+    </div>
+
+  </div>
+
   
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+  <script src="index.js"></script>
+
 </body>
 </html>
