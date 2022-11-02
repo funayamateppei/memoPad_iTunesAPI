@@ -15,7 +15,6 @@ bar.addEventListener('click', () => {
 // ------------------ localStorage ------------------------
 const storage = [];
 const array = [];
-const l = storage.length;
 
 // ボタンクリックで配列にpush→localStorageに入れる
 $('.btn button').on('click', () => {
