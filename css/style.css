@@ -1,17 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
+/* --------------- レスポンシブ ----------------- */
+@media (max-width: 1200px) {
+  .api div {
+    width: 50% !important;
+  }
+}
+@media (max-width: 800px) {
+  .api div {
+    width: 100% !important;
+  }
+}
+@media (max-width: 1000px) {
+  .flex {
+    width: 100%;
+    display: block !important;
+  }
+  .btn {
+    margin: 0 !important;
+    padding-left: 380px;
+  }
+}
+@media (max-width: 600px) {
+  .search h2 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .search .btn {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 15px auto !important;
+  }
+  .search {
+    width: 100%;
+    padding: 0 !important;
+  }
+}
+
 body {
   background-image: url('../img/background.jpg');
   background-size: cover;
   /* font-family: 'Sacramento', cursive; */
   font-family: 'Caveat', cursive, 'RocknRoll One', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .flex {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* ----------------- top -------------------- */
@@ -24,10 +63,8 @@ body {
 /* ----------------- search ------------------- */
 .search {
   display: flex;
-  /* position: fixed; */
   width: 100%;
   padding-left: 80px;
-  /* border: 1px solid gray; */
 }
 
 .form {
@@ -38,24 +75,24 @@ body {
 .form1 label {
   text-align: center;
   width: 90px;
-  margin: 10px 25px 10px 80px;
+  margin: 10px 25px 10px 40px;
 }
 
 .form1 input {
   background-color: white;
   border: none;
   border-radius: 4px;
-  width: 250px;
+  width: 200px;
   text-align: center;
 }
 
 .btn {
-  margin-left: 20px;
+  margin-left: 60px;
 }
 
 .btn button {
   border: 1px solid gray;
-  box-shadow: 0 2px black;
+  box-shadow: 2px 2px black;
   transition: .2s;
 }
 
@@ -65,7 +102,7 @@ body {
 
 .btn button:active {
   box-shadow: none;
-  transform: translateY(2px);
+  transform: translate(2px, 2px);
   transition: .2s;
 }
 
@@ -79,8 +116,8 @@ body {
 
 .nav {
   position: fixed;
-  top: 50px;
-  right: 50px;
+  top: 30px;
+  right: 30px;
   cursor: pointer;
   width: 68px;
   z-index: 2;
@@ -138,12 +175,12 @@ body {
 .search-list {
   font-family: 'Caveat', cursive, 'RocknRoll One', sans-serif;
   background-color: white;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  width: 400px;
+  width: 350px;
   height: 100%;
-  padding-top: 180px;
+  padding-top: 120px;
   z-index: 1;
   transform: translateX(100%);
   transition: .5s;
@@ -153,12 +190,13 @@ body {
   font-size: 32px;
   width: 100%;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  color: blue;
 }
 
 .lists h3 {
   font-size: 24px;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 .header {
@@ -167,24 +205,99 @@ body {
   width: 100%;
 }
 
-.header div {
-  display: flex;
-  justify-content: end;
-  align-items: center;
+ol {
+  margin-left: 20px;
 }
 
-.header p {
-  font-size: 16px;
-  padding: 0 0 0 10px !important;
+.header li {
+  font-size: 20px;
+  padding-left: 20px !important;
   margin: 0;
   width: 240px;
-  display: inline-block;
+}
+
+.lists select {
+  border-radius: 4px;
+  line-height: 30px;
+  margin-right: 10px;
+  height: 34px;
+}
+
+.btn2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 350px;
+  height: 50px;
+  bottom: 50px;
+  background-color: white;
 }
 
 .lists button {
   text-align: center;
-  width: 50px;
+  border-radius: 4px;
+  width: 100px;
   height: 30px;
   margin: 5px;
+  border: 1px solid gray;
+  box-shadow: 2px 2px black;
+  transition: .2s;
 }
 
+.btn2 button:hover {
+  opacity: .7;
+}
+
+.btn2 button:active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+  transition: .2s;
+}
+
+/* ---------------------- API ------------------------ */
+.api {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+.api div {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+  padding: 20px;
+
+  border: 2px solid gray;
+  border-radius: 3px;
+}
+
+.api p {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.api img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.error1 {
+  border: none !important;
+  display: none !important;
+}
+
+
+.error1 img {
+  margin: 0 auto;
+  width: 1000px !important;
+  height: 500px;
+}
