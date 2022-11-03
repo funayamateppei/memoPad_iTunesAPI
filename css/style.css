@@ -14,11 +14,28 @@
 }
 @media (max-width: 1000px) {
   .flex {
+    width: 100%;
     display: block !important;
   }
   .btn {
     margin: 0 !important;
     padding-left: 380px;
+  }
+}
+@media (max-width: 600px) {
+  .search h2 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .search .btn {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 15px auto !important;
+  }
+  .search {
+    width: 100%;
+    padding: 0 !important;
   }
 }
 
@@ -161,7 +178,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 400px;
+  width: 350px;
   height: 100%;
   padding-top: 120px;
   z-index: 1;
@@ -173,12 +190,13 @@ body {
   font-size: 32px;
   width: 100%;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  color: blue;
 }
 
 .lists h3 {
   font-size: 24px;
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 .header {
@@ -187,25 +205,54 @@ body {
   width: 100%;
 }
 
-.header div {
-  display: flex;
-  justify-content: end;
-  align-items: center;
+ol {
+  margin-left: 20px;
 }
 
-.header p {
-  font-size: 16px;
-  padding: 0 0 0 10px !important;
+.header li {
+  font-size: 20px;
+  padding-left: 20px !important;
   margin: 0;
   width: 240px;
-  display: inline-block;
+}
+
+.lists select {
+  border-radius: 4px;
+  line-height: 30px;
+  margin-right: 10px;
+  height: 34px;
+}
+
+.btn2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 350px;
+  height: 50px;
+  bottom: 50px;
+  background-color: white;
 }
 
 .lists button {
   text-align: center;
-  width: 50px;
+  border-radius: 4px;
+  width: 100px;
   height: 30px;
   margin: 5px;
+  border: 1px solid gray;
+  box-shadow: 2px 2px black;
+  transition: .2s;
+}
+
+.btn2 button:hover {
+  opacity: .7;
+}
+
+.btn2 button:active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+  transition: .2s;
 }
 
 /* ---------------------- API ------------------------ */
@@ -241,4 +288,16 @@ body {
   width: 200px;
   height: 200px;
   margin-bottom: 10px;
+}
+
+.error1 {
+  border: none !important;
+  display: none !important;
+}
+
+
+.error1 img {
+  margin: 0 auto;
+  width: 1000px !important;
+  height: 500px;
 }
