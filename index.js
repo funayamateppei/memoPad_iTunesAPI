@@ -48,25 +48,67 @@ if (localStorage.getItem('kye')) {
   for (let i = 0; i < Data.length; i++) {
     storage.push(Data[i]);
   }
+
+  const del = (index) => {
+    // クリックされたnumber番目の配列の中身を削除し、localStorageを上書き
+    console.log('hoge')
+    storage.splice(index, 1);
+    const jsonData = JSON.stringify(storage);
+    localStorage.setItem('kye', jsonData);
+    // すでに表示してある検索履歴を全部削除
+    $('.header div').remove();
+    // 削除後の配列を使って検索履歴を再作成
+    for (let i = 0; i < storage.length; i++) {
+      array.push('<p>' + storage[i].artist + ' _ ' + storage[i].song + '</p>');
+      // $('.header').append(`<div class="box${i}"></div>`);
+      // $(`.header .box${i}`).append(array[i]);
+      // $(`.header .box${i}`).append(`<button class="send num${i}">send</button>`);
+      // $(`.header .box${i}`).append(`<button class="delete num${i}">delete</button>`);
+    }
+
+    storage.map((value, index) => {
+      $('.header').append(`<div class="box${index}"></div>`);
+      $(`.box${index}`).append(array[index]);
+      $(`.box${index}`).append(`<button class="send">send</button>`);
+      $(`.box${index}`).append(`<button class="delete" onclick="${del(index)}">delete</button>`);
+    })
+  }
+
   // 検索履歴作成
   for (let i = 0; i < storage.length; i++) {
     array.push('<p>' + storage[i].artist + ' _ ' + storage[i].song + '</p>');
-    $('.header').append(`<div class="box${i}"></div>`);
-    $(`.header .box${i}`).append(array[i]);
-    $(`.header .box${i}`).append(`<button class="send num${i}">send</button>`);
-    $(`.header .box${i}`).append(`<button class="delete num${i}">delete</button>`);
+    // $('.header').append(`<div class="box${i}"></div>`);
+    // $(`.header .box${i}`).append(array[i]);
+    // $(`.header .box${i}`).append(`<button class="send num${i}">send</button>`);
+    // $(`.header .box${i}`).append(`<button class="delete num${i}">delete</button>`);
   }
+  storage.map((value, index) => {
+    $('.header').append(`<div class="box${index}"></div>`);
+    $(`.header .box${index}`).append(array[index]);
+    $(`.header .box${index}`).append(`<button class="send">send</button>`);
+    $(`.header .box${index}`).append(`<button class="delete" onclick="${del(index)}">delete</button>`);
+  })
 }
 
+
 // デリート機能
-// 動的に作られたdivタグの連番をとれば変数に入れて配列、localStorageを削除できる
-// ↑まだコードは書いていない
-// クリックイベントは<div class=header></div>内のdivタグに設定されている
-//    →index($(this))でクリックされた要素を持ってこれない
-$('.header div').on('click', '.delete', () => {
+// 動的に作られたdivタグの連番をとれば変数に入れて配列を削除して
+// localStorage、検索履歴を更新できる
+// 動的に作った要素に対するクリックイベントの書き方では、クリックイベントは
+//  .headerに設定されている→index($(this))でクリックされた要素を持ってこれない
+$('.header').on('click', '.delete', () => {
+  // let number = $(this).index();
+  console.log(number);
+
+})
+
+// 検索履歴を使ったform上書き機能
+$('.header').on('click', '.send', () => {
   let number = $('.header div').index($(this));
-  console.log(number)
-  console.log('hoge');
+  console.log(number);
+
+  // $('#artist').val(storage[number].artist);
+  // $('#song').val(storage[number].song);
 })
 
 // --------------------- API -------------------------
@@ -114,7 +156,7 @@ const showData = (json) => {
     html += `<img src="${result.artworkUrl100}">`;
     html += '<p>Artist : ' + result.artistName + '</p>';
     html += '<audio src="' + result.previewUrl + '" controls />';
-    html += '<button>ライブラリへ保存</button>';
+    // html += '<button>ライブラリへ保存</button>';
     $(`.api .item${i}`).append(html);
   }
 }

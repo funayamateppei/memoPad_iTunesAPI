@@ -163,7 +163,7 @@ body {
   right: 0;
   width: 400px;
   height: 100%;
-  padding-top: 180px;
+  padding-top: 120px;
   z-index: 1;
   transform: translateX(100%);
   transition: .5s;

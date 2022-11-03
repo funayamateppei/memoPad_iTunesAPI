@@ -27,3 +27,9 @@
 
 - 動的に付与されたものにイベント処理を行う　注意点
   - https://qiita.com/sansaisoba/items/7099e63c4badb3b51b74
+
+- 配列の中のn番目を削除
+  - https://lab.syncer.jp/Web/JavaScript/Snippet/7/
+
+- map関数は返り値を配列としてだしてくれる
+  - https://www.sejuku.net/blog/21812
