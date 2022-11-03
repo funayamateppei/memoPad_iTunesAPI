@@ -103,7 +103,7 @@ const search = () => {
     media: 'music',
     country: 'JP',
     term: keyword,
-    limit: 21
+    limit: 24
   };
 
   // iTunes API コール
