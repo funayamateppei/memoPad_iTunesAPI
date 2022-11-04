@@ -111,7 +111,7 @@ const search = () => {
     url: 'https://itunes.apple.com/search',
     method: 'GET',
     data: params,
-    // dataTypeをjsonpにする必要があります
+    // dataTypeをjsonpにする必要がある
     dataType: 'jsonp',
 
     // 処理が成功したら、jsonが返却されます
